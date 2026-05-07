@@ -1,0 +1,38 @@
+# Build outputs
+build/
+cmake-build-*/
+
+# CMake generated
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps/
+
+# vcpkg
+vcpkg/
+vcpkg_installed/
+
+# IDE
+.vscode/
+.idea/
+*.user
+*.suo
+.vs/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+
+# Compiled artifacts
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dll
+*.exe

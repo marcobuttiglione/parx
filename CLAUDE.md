@@ -128,9 +128,42 @@ When Milestone 0 is complete, tag the commit as `v0.0.1`.
 
 ## Notes for Claude Code
 
-- Before writing any code, read the relevant section of this file and confirm you understand the current milestone.
+### About the lead developer
+The lead developer is Marco Buttiglione, a PhD student in Computer Graphics at Politecnico di Milano (DEIB). His research spans computer graphics, VR/AR, real-time simulation, and HCI. He has strong C++ and graphics knowledge. Do not over-explain basics, do not add patronizing comments in code, treat him as a peer.
+
+### About the process
+Marco does not work alone. There is a second Claude instance — a Claude.ai chat — that acts as tech lead, content strategist, and documentation reviewer for the project. Claude Code handles implementation. The Claude.ai chat handles architecture brainstorming, devlog writing, LinkedIn and X posts, and review of milestone documentation.
+
+The two instances coordinate through Marco. When Claude Code produces something worth documenting or discussing at a higher level, it should flag it explicitly so Marco knows to bring it to the other instance.
+
+### General rules
+- Before writing any code, confirm you understand the current milestone and its open checkboxes.
 - Do not implement features beyond the current milestone unless explicitly asked.
-- When in doubt about an architectural decision, ask before implementing.
-- After completing a logical unit of work, suggest an appropriate commit message.
-- If you introduce a new dependency, update vcpkg.json and document the choice here.
-- The lead developer is Marco Buttiglione, a PhD student in Computer Graphics at Politecnico di Milano. He has strong C++ and graphics knowledge. Do not over-explain basics.
+- When in doubt about an architectural decision, stop and ask before implementing. A wrong architecture is worse than a slow implementation.
+- If you introduce a new dependency, update `vcpkg.json` and add a one-line justification comment in this file under the Stack section.
+- The main branch must always compile. Work in progress goes in feature branches named `feat/description` or `milestone/N-description`.
+
+### Commit workflow
+After completing each logical unit of work, Claude Code must:
+1. Suggest an atomic commit message following Conventional Commits.
+2. Wait for Marco to confirm before proceeding to the next unit.
+
+Do not batch unrelated changes into a single commit. One concern, one commit.
+
+### Documentation workflow
+At the end of every milestone, Claude Code must produce a `docs/devlog/milestone-N.md` file containing:
+- What was built in this milestone
+- Key architectural decisions made and why
+- Dependencies introduced
+- Problems encountered and how they were solved
+- What is left open or deferred
+- Suggested content ideas for LinkedIn and X posts based on this milestone
+
+This file is handed off to Marco to bring to the Claude.ai chat for devlog writing and social content production.
+
+### Session start checklist
+At the start of every session, Claude Code must:
+1. Read this file in full.
+2. State the current milestone and which checkboxes are still open.
+3. Propose the first concrete action for this session.
+4. Wait for Marco to confirm before starting.
